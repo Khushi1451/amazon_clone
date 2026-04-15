@@ -1,0 +1,377 @@
+.header {
+  background-color: var(--amz-dark);
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  min-height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  gap: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border 0.2s;
+}
+
+.logoContainer:hover {
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.logoLink {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.logo {
+  width: 90px;
+  object-fit: contain;
+  margin-top: 8px;
+}
+
+.cloneTag {
+  color: var(--amz-orange);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.navLocation {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border 0.2s;
+}
+
+.navLocation:hover {
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.navLocationText {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2px;
+}
+
+.navLine1 {
+  font-size: 12px;
+  color: #ccc;
+  line-height: 14px;
+  white-space: nowrap;
+}
+
+.navLine2 {
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  line-height: 15px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.searchBar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 40px;
+  transition: box-shadow 0.2s, border 0.2s;
+  border: 2px solid transparent;
+}
+
+.searchBar:focus-within {
+  border-color: var(--amz-orange);
+  box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.2);
+}
+
+.searchSelect {
+  background-color: #f3f3f3;
+  border: none;
+  padding: 0 10px;
+  height: 100%;
+  color: #555;
+  font-size: 13px;
+  cursor: pointer;
+  border-right: 1px solid #ccc;
+  outline: none;
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  padding: 0 12px;
+  height: 100%;
+  outline: none;
+  font-size: 15px;
+}
+
+.searchButton {
+  background-color: var(--amz-yellow);
+  width: 44px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  transition: background-color 0.2s;
+}
+
+.searchButton:hover {
+  background-color: var(--amz-yellow-hover);
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navItem {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 8px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border 0.2s;
+  position: relative;
+}
+
+.navItem:hover {
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.accountDropdownTrigger {
+  /* Used for JS selection if needed */
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  color: black;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  min-width: 250px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 16px;
+  z-index: 200;
+  cursor: default;
+}
+
+.dropdownGuest {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.dropdownSigninBtn {
+  width: 200px;
+  text-align: center;
+}
+
+.newCustomer {
+  font-size: 12px;
+}
+
+.newCustomer a {
+  color: #007185;
+}
+
+.newCustomer a:hover {
+  color: #c45500;
+  text-decoration: underline;
+}
+
+.dropdownUser {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dropdownUser h4 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 4px;
+}
+
+.dropdownUser a {
+  font-size: 14px;
+  color: #333;
+}
+
+.dropdownUser a:hover {
+  color: var(--amz-orange);
+  text-decoration: underline;
+}
+
+.logoutBtn {
+  font-size: 14px;
+  color: #B12704;
+  cursor: pointer;
+  margin-top: 8px;
+  border-top: 1px solid #ddd;
+  padding-top: 8px;
+}
+
+.logoutBtn:hover {
+  text-decoration: underline;
+}
+
+.cartContainer {
+  display: flex;
+  align-items: flex-end;
+  padding: 6px 8px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: border 0.2s;
+}
+
+.cartContainer:hover {
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.cartIconWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cartCount {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--amz-orange);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.cartText {
+  margin-bottom: 4px;
+  margin-left: 2px;
+}
+
+.mobileSearchBarWrapper {
+  display: none;
+  background-color: var(--amz-nav);
+  padding: 10px;
+}
+
+.mobileSearchBar {
+  display: flex;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 40px;
+  width: 100%;
+}
+
+.subheader {
+  background-color: var(--amz-nav);
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 4px 16px;
+  gap: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: transform 0.3s ease;
+}
+
+.subheaderItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 8px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border 0.2s;
+}
+
+.subheaderItem:hover {
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.overlay {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .searchSelect {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .desktopOnly {
+    display: none !important;
+  }
+
+  .searchBar {
+    display: none; /* Hide main search bar */
+  }
+
+  .mobileSearchBarWrapper {
+    display: block; /* Show mobile search bar */
+  }
+
+  .navRight {
+    gap: 4px;
+  }
+
+  .subheader {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .dropdownMenu {
+    right: -20px;
+  }
+}

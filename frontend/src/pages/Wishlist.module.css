@@ -1,0 +1,171 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.header h1 {
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+.content {
+  display: flex;
+  gap: 24px;
+}
+
+.sidebar {
+  width: 250px;
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  height: fit-content;
+}
+
+.activeList {
+  background-color: #f0f2f2;
+  font-weight: 700;
+  padding: 14px 20px;
+  border-left: 3px solid #e47911;
+}
+
+.newList {
+  padding: 14px 20px;
+  color: #007185;
+  cursor: pointer;
+  border-top: 1px solid var(--border-color);
+}
+
+.newList:hover {
+  text-decoration: underline;
+}
+
+.mainArea {
+  flex: 1;
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.listHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.listHeader h2 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.privacy {
+  font-size: 12px;
+  color: #565959;
+  background: #f0f2f2;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 16px 0;
+}
+
+.loading, .empty {
+  text-align: center;
+  padding: 50px;
+  font-size: 18px;
+}
+
+.itemsList {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.itemImage {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+}
+
+.itemDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.itemTitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: #007185;
+  margin-bottom: 8px;
+}
+
+.itemTitle:hover {
+  color: #c45500;
+  text-decoration: underline;
+}
+
+.rating {
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.reviewCount {
+  color: #007185;
+  margin-left: 4px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #B12704;
+  margin-bottom: 12px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.addToCartBtn {
+  padding: 8px 16px;
+  font-size: 13px;
+  border-radius: 20px;
+}
+
+.removeBtn {
+  background: white;
+  border: 1px solid #d5d9d9;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #0f1111;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.removeBtn:hover {
+  background: #f0f2f2;
+}
+
+@media (max-width: 768px) {
+  .content {
+     flex-direction: column;
+  }
+  .sidebar {
+     width: 100%;
+  }
+}
