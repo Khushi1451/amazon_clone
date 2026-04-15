@@ -15,7 +15,7 @@ const Wishlist = () => {
     if (!user) return;
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch('/api/wishlist', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/wishlist`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (res.ok) {
@@ -40,7 +40,7 @@ const Wishlist = () => {
   const removeFromWishlist = async (itemId) => {
     try {
       const token = localStorage.getItem('token');
-      await fetch(`/api/wishlist/${itemId}`, {
+      await fetch(`${import.meta.env.VITE_API_URL}/api/wishlist/${itemId}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });

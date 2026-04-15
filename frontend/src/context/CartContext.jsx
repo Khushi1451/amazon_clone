@@ -12,7 +12,7 @@ export const CartProvider = ({ children }) => {
     try {
       const token = localStorage.getItem('token');
       if (!token) return;
-      const res = await fetch('/api/cart', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/cart`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (res.ok) {
@@ -38,7 +38,7 @@ export const CartProvider = ({ children }) => {
         console.warn("User must be logged in to add to cart");
         return;
       }
-      await fetch('/api/cart', {
+      await fetch(`${import.meta.env.VITE_API_URL}/api/cart`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
@@ -56,7 +56,7 @@ export const CartProvider = ({ children }) => {
     if (quantity < 1) return;
     try {
       const token = localStorage.getItem('token');
-      await fetch(`/api/cart/${itemId}`, {
+      await fetch(`${import.meta.env.VITE_API_URL}/api/cart/${itemId}`, {
         method: 'PUT',
         headers: { 
           'Content-Type': 'application/json',
@@ -73,7 +73,7 @@ export const CartProvider = ({ children }) => {
   const removeFromCart = async (itemId) => {
     try {
       const token = localStorage.getItem('token');
-      await fetch(`/api/cart/${itemId}`, {
+      await fetch(`${import.meta.env.VITE_API_URL}/api/cart/${itemId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`

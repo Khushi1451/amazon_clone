@@ -16,7 +16,7 @@ export const WishlistProvider = ({ children }) => {
     }
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch('/api/wishlist', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/wishlist`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (res.ok) {
@@ -36,7 +36,7 @@ export const WishlistProvider = ({ children }) => {
     try {
       const token = localStorage.getItem('token');
       if (!token) return;
-      await fetch('/api/wishlist', {
+      await fetch(`${import.meta.env.VITE_API_URL}/api/wishlist`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ export const WishlistProvider = ({ children }) => {
     if (!item) return;
     try {
       const token = localStorage.getItem('token');
-      await fetch(`/api/wishlist/${item.id}`, {
+      await fetch(`${import.meta.env.VITE_API_URL}/api/wishlist/${item.id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`

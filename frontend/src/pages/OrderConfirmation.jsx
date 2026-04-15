@@ -11,7 +11,7 @@ const OrderConfirmation = () => {
     const fetchOrder = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await fetch(`/api/orders/${id}`, {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/orders/${id}`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         if (res.ok) {

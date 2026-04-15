@@ -14,7 +14,7 @@ const Home = () => {
       try {
         const queryParams = new URLSearchParams(location.search);
         const searchQuery = queryParams.get('search') ? `?search=${queryParams.get('search')}` : '';
-        const res = await fetch(`/api/products${searchQuery}`);
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/products${searchQuery}`);
         const data = await res.json();
         setProducts(data);
       } catch (err) {

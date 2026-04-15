@@ -30,7 +30,7 @@ const Checkout = () => {
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch('/api/orders', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/orders`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
