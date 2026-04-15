@@ -16,9 +16,15 @@ const Home = () => {
         const searchQuery = queryParams.get('search') ? `?search=${queryParams.get('search')}` : '';
         const res = await fetch(`${import.meta.env.VITE_API_URL}/api/products${searchQuery}`);
         const data = await res.json();
-        setProducts(data);
+        if (!res.ok || !Array.isArray(data)) {
+          console.error('Failed to load products:', data);
+          setProducts([]);
+        } else {
+          setProducts(data);
+        }
       } catch (err) {
         console.error('Error fetching products:', err);
+        setProducts([]);
       } finally {
         setLoading(false);
       }
