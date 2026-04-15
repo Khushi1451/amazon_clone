@@ -1,9 +1,8 @@
 const express = require('express');
-const { PrismaClient } = require('@prisma/client');
+const prisma = require('../lib/db');
 const authenticateToken = require('../middleware/auth');
 
 const router = express.Router();
-const prisma = new PrismaClient();
 
 router.use(authenticateToken); // Protect all wishlist routes
 
